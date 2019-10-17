@@ -143,10 +143,10 @@ abstract class Shortcode {
 	/**
 	 * Logic for the shortcode.
 	 *
-	 * @param array  $atts    The raw attributes from the shortcode.
+	 * @param mixed  $atts    The raw attributes from the shortcode.
 	 * @param string $content The raw value from using an enclosing (not self-closing) shortcode.
 	 */
-	public function init_shortcode( array $atts = [], string $content = '' ) {
+	public function init_shortcode( $atts = [], string $content = '' ) {
 		return $this->process_shortcode( $this->get_atts( $atts ), $content );
 	}
 
@@ -155,10 +155,10 @@ abstract class Shortcode {
 	 *
 	 * @see shortcode_atts()
 	 *
-	 * @param array  $atts    The processed shortcode attributes after merging with defaults via `shortcode_atts()`.
+	 * @param mixed  $atts    The processed shortcode attributes after merging with defaults via `shortcode_atts()`.
 	 * @param string $content The raw value from using an enclosing (not self-closing) shortcode.
 	 */
-	abstract public function process_shortcode( array $atts = [], string $content = '' );
+	abstract public function process_shortcode( $atts = [], string $content = '' );
 
 	/**
 	 * Get and process the attributes.
