@@ -14,6 +14,13 @@ if ( ! class_exists( TK_Request::class ) ) {
 	 * Useful for things like utilities or hooking into something that affects both back-end and front-end.
 	 */
 	final class TK_Request extends Shortcode {
+		
+		public function __construct()
+		{
+		    parent::__construct();
+		    $this->tag = "my_shortcode";	//elsewhere shortcode take name of the class.
+		}
+		
 		/**
 		 * An array of all the shortcode's possible attributes and their default values.
 		 *
