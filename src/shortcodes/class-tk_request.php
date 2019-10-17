@@ -35,12 +35,12 @@ if ( ! class_exists( TK_Request::class ) ) {
 		 * @see  filter_input() We could have used this, but there were a number of things to workaround, particularly
 		 *                      when manually changing _GET or _POST or modifying _GET during a _POST request.
 		 *
-		 * @param array  $atts    The shortcode attributes.
+		 * @param mixed  $atts    The shortcode attributes.
 		 * @param string $content The value from using an enclosing (not self-closing) shortcode.
 		 *
 		 * @return mixed The value of the query parameter, if any.
 		 */
-		public function process_shortcode( array $atts = [], string $content = '' ) {
+		public function process_shortcode( $atts = [], string $content = '' ) {
 			$atts = $this->get_atts( $atts );
 
 			$atts['parameter'] = urlencode( $atts['parameter'] );
